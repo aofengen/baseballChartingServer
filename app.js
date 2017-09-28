@@ -6,9 +6,9 @@ const bodyParser = require('body-parser');
 const sequelize = require('./db.js');
 // const cors = require('cors');
 const router = require('./router.js');
-const Team = sequelize.import(__dirname + '\\models\\team.js');
-const Player = sequelize.import(__dirname + '\\models\\player.js');
-const Position = sequelize.import(__dirname + '\\models\\position.js');
+const Team = sequelize.import(__dirname + '\/models\/team.js');
+const Player = sequelize.import(__dirname + '\/models\/player.js');
+const Position = sequelize.import(__dirname + '\/models\/position.js');
 
 // Player.sync({force: true});
 sequelize.sync();
