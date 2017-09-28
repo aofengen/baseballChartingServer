@@ -1,7 +1,7 @@
 const Auth = require('./controllers/auth.js');
 const Team = require('./controllers/teams.js');
 const Player = require('./controllers/players.js');
-const Position = require('./controllers/position.js');
+const Position = require('./controllers/positions.js');
 // const passportService = require('./services/passport.js');
 // const passport = require('passport');
 
