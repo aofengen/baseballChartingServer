@@ -1,11 +1,11 @@
 const Auth = require('./controllers/auth.js');
 const Team = require('./controllers/teams.js');
 const Player = require('./controllers/players.js');
-const passportService = require('./services/passport.js');
-const passport = require('passport');
+// const passportService = require('./services/passport.js');
+// const passport = require('passport');
 
-const requireAuth = passport.authenticate('jwt', {session: false});
-const requireSignin = passport.authenticate('local', {session: false});
+// const requireAuth = passport.authenticate('jwt', {session: false});
+// const requireSignin = passport.authenticate('local', {session: false});
 
 module.exports = function(app) {
     app.get('/', function(req, res){
