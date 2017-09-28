@@ -1,6 +1,10 @@
 const Sequelize = require('sequelize');
-let sequelize = new Sequelize("baseballCharting", "postgres", "9074dewberry1136", {
-	host: 'localhost',
+// let sequelize = new Sequelize("baseballCharting", "postgres", "9074dewberry1136", {
+// 	host: 'localhost',
+// 	dialect: 'postgres'
+// });
+
+let sequelize = new Sequelize(process.env.DATABASE_URL || process.env.PORT, {
 	dialect: 'postgres'
 });
 
