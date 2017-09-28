@@ -9,6 +9,7 @@
   "author": "Aaron Ofengender",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "1.15.1",
     "cors": "^2.8.4",
     "dotenv": "^4.0.0",
@@ -18,7 +19,5 @@
     "pg-hstore": "^2.3.2",
     "sequelize": "^3.23.3"
   },
-  "devDependencies": {
-    "bcryptjs": "^2.4.3"
-  }
+  "devDependencies": {}
 }
