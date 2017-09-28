@@ -8,10 +8,6 @@ const Player = require('./controllers/players.js');
 // const requireSignin = passport.authenticate('local', {session: false});
 
 module.exports = function(app) {
-    app.get('/', function(req, res){
-		res.send({message:'hey'});
-    });
-    
     app.post('/api/signup', Auth.signup);
     app.post('/api/signin', Auth.signin);
     app.post('/api/team', Team.addTeam);
