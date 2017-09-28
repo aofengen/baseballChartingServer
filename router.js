@@ -1,6 +1,7 @@
 const Auth = require('./controllers/auth.js');
 const Team = require('./controllers/teams.js');
 const Player = require('./controllers/players.js');
+const Position = require('./controllers/position.js');
 // const passportService = require('./services/passport.js');
 // const passport = require('passport');
 
@@ -12,6 +13,7 @@ module.exports = function(app) {
     app.post('/api/signin', Auth.signin);
     app.post('/api/team', Team.addTeam);
     app.post('/api/player', Player.addPlayer);
+    app.post('/api/position', Position.addPosition);
 
     app.get('/api/team', Team.getTeams);
     app.get('/api/player', Player.getPlayers)
