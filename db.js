@@ -4,7 +4,7 @@
 // 	dialect: 'postgres'
 // });
 
-let sequelize = new Sequelize(process.env.DATABASE_URL || process.env.PORT, {
+let sequelize = new Sequelize(process.env.DATABASE_URL || '//postgres://postgres:9074dewberry1136@localhost:5432/workoutlog', {
 	dialect: 'postgres'
 });
 
