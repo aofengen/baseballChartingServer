@@ -4,9 +4,7 @@ const User = sequelize.import('../models/user.js');
 const Team = sequelize.import('../models/team.js');
 
 exports.addTeam = function(req, res) {
-    console.log(req.body);
-    let teamName = req.body.team.teamName;
-    console.log(req.user);
+    let teamName = req.body.teamName;
     let owner = req.user.id;
 
     Team
@@ -33,7 +31,6 @@ exports.getTeams = function(req, res) {
     })
     .then(
         function findAllSuccess(data) {
-            console.log(data);
             res.json(data);
         },
         function findAllError(err) {
@@ -45,7 +42,7 @@ exports.getTeams = function(req, res) {
 exports.deleteTeam = function(req, res) {
     let team = req.body.team;
 
-    Team.destroy({where: {id: team.id}})
+    Team.destroy({where: {teamName: team}})
     .then(
         function deleteSuccess(data) {
             res.json(data);

@@ -4,14 +4,15 @@ const Team = sequelize.import('../models/team.js');
 const Player = sequelize.import('../models/player.js');
 
 exports.addPlayer = function(req, res) {
-    console.log(req.body);
     let name = req.body.player.name;
-    let number = Number.parseInt(req.body.player.number);
+    let teamName = req.body.player.teamName;
+    let number = req.body.player.number;
     let owner = req.user.id;
 
     Player
     .create({
         owner: owner,
+        teamName: teamName,
         name: name,
         number: number
     }).then(
@@ -34,7 +35,6 @@ exports.getPlayers = function(req, res) {
     })
     .then(
         function findAllSuccess(data) {
-            console.log(data);
             res.json(data);
         },
         function findAllError(err) {
@@ -46,10 +46,7 @@ exports.getPlayers = function(req, res) {
 exports.deletePlayer = function(req, res) {
     let player = req.body.player;
     
-    console.log(player);
-    Player.destroy({
-        where: {id: player.id}
-    })
+    Player.destroy({where: {name: player}})
     .then(
         function deleteSuccess(data) {
             res.json(data);
