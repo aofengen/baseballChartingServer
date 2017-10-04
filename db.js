@@ -1,4 +1,4 @@
-// const Sequelize = require('sequelize');
+const Sequelize = require('sequelize');
 // let sequelize = new Sequelize("baseballCharting", "postgres", "9074dewberry1136", {
 // 	host: 'localhost',
 // 	dialect: 'postgres'
