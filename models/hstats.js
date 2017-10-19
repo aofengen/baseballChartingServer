@@ -17,4 +17,4 @@ module.exports = function(sequelize, DataTypes){
         caughtstealing: DataTypes.NUMBER
 	});
 	return hStats;
-};
+}
