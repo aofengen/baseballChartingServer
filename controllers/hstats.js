@@ -29,11 +29,11 @@ exports.addhStats = function(req,res) {
         strikeouts: strikeouts,
         walks: walks,
         hitbypitches: hitbypitches,
-        sacflies: req.body.sacflies,
-        rbis: req.body.rbis,
-        runs: req.body.runs,
-        stolenbases: req.body.stolenbases,
-        caughtstealing: req.body.caughtstealing
+        sacflies: sacflies,
+        rbis: rbis,
+        runs: runs,
+        stolenbases: stolenbases,
+        caughtstealing: caughtstealing
     })
     .then(
         function createSuccess(hstats) {
