@@ -12,8 +12,9 @@ const Position = sequelize.import(__dirname + '\/models\/position.js');
 const hStats = sequelize.import(__dirname + '\/models\/hstats.js');
 const pStats = sequelize.import(__dirname + '\/models\/pstats.js');
 
-// Player.sync({force: true});
-sequelize.sync();
+pStats.sync({force: true});
+hStats.sync({force: true});
+//sequelize.sync();
 // app.use(cors());
 app.use(bodyParser.json());
 app.use(require('./middleware/headers'));
