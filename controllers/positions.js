@@ -24,9 +24,23 @@ exports.addPosition = function(req, res) {
     );
 }
 
-exports.getPositions = function(req, res) {
+exports.getHPositions = function(req, res) {
     Position.findAll({
-        where: {bench: false, pitcher: req.body.pitcherValue}
+        where: {bench: false, pitcher: false}
+    })
+    .then(
+        function findAllSuccess(data) {
+            res.json(data);
+        },
+        function findAllError(err) {
+            res.json(504, err.message);
+        }
+    );
+};
+
+exports.getPPositions = function(req, res) {
+    Position.findAll({
+        where: {bench: false, pitcher: true}
     })
     .then(
         function findAllSuccess(data) {
