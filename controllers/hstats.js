@@ -2,7 +2,23 @@ const sequelize = require('../db.js');
 const hStats = require('../models/hstats.js');
 
 exports.addhStats = function(req,res) {
-    let stats = bundlehStats(req);
+    let stats = {
+        team: req.body.team,
+        player: req.body.player,
+        atbats: req.body.abs,
+        singles: req.body.singles,
+        doubles: req.body.doubles,
+        triples: req.body.triples,
+        homeruns: req.body.hrs,
+        strikeouts: req.body.strikeouts,
+        walks: req.body.walks,
+        hitbypitches: req.body.hbp,
+        sacflies: req.body.sf,
+        rbis: req.body.rbis,
+        runs: req.body.runs,
+        stolenbases: req.body.sb,
+        caughtstealing: req.body.cs
+    }
 
     hStats.create(stats)
     .then(
