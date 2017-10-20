@@ -36,7 +36,7 @@ exports.addhStats = function(req,res) {
         caughtstealing: caughtstealing
     })
     .then(
-        function createSuccess(hstats) {
+        function createSuccess(stats) {
             res.json({
                 hstats: stats
             });
