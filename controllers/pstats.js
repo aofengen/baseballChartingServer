@@ -4,7 +4,7 @@ const pStats = sequelize.import('../models/pstats.js');
 exports.addpStats = function(req,res) {
     let stats = bundlepStats(req);
 
-    hStats.create(stats)
+    pStats.create(stats)
     .then(
         function createSuccess(hstats) {
             res.json({
