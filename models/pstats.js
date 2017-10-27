@@ -9,13 +9,13 @@ module.exports = function(sequelize, DataTypes){
         earnedrunsallowed: DataTypes.INTEGER,
         runsallowed: DataTypes.INTEGER,
         strikeouts: DataTypes.INTEGER,
-        // walksallowed: DataTypes.INTEGER,
-        // hits: DataTypes.INTEGER,
-        // wildpitches: DataTypes.INTEGER,
-        // pickoffs: DataTypes.INTEGER,
-        // stolenbases: DataTypes.INTEGER,
-        // caughtstealing: DataTypes.INTEGER,
-        // homerunsallowed: DataTypes.INTEGER
+        walksallowed: DataTypes.INTEGER,
+        hits: DataTypes.INTEGER,
+        wildpitches: DataTypes.INTEGER,
+        pickoffs: DataTypes.INTEGER,
+        stolenbases: DataTypes.INTEGER,
+        caughtstealing: DataTypes.INTEGER,
+        homerunsallowed: DataTypes.INTEGER
 	});
 	return pStats;
 }

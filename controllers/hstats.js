@@ -12,13 +12,13 @@ exports.addhStats = function(req,res) {
     let triples = req.body.triples;
     let homeruns = req.body.hrs;
     let strikeouts = req.body.strikeouts;
-    // let walks = req.body.walks;
-    // let hitbypitches = req.body.hbp;
-    // let sacflies = req.body.sf;
-    // let rbis = req.body.rbis;
-    // let runs = req.body.runs;
-    // let stolenbases = req.body.sb;
-    // let caughtstealing =  req.body.cs;
+    let walks = req.body.walks;
+    let hitbypitches = req.body.hbp;
+    let sacflies = req.body.sf;
+    let rbis = req.body.rbis;
+    let runs = req.body.runs;
+    let stolenbases = req.body.sb;
+    let caughtstealing =  req.body.cs;
 
     hStats.create({
         owner: owner,
@@ -30,13 +30,13 @@ exports.addhStats = function(req,res) {
         triples: triples,
         homeruns: homeruns,
         strikeouts: strikeouts,
-        // walks: walks,
-        // hitbypitches: hitbypitches,
-        // sacflies: sacflies,
-        // rbis: rbis,
-        // runs: runs,
-        // stolenbases: stolenbases,
-        // caughtstealing: caughtstealing
+        walks: walks,
+        hitbypitches: hitbypitches,
+        sacflies: sacflies,
+        rbis: rbis,
+        runs: runs,
+        stolenbases: stolenbases,
+        caughtstealing: caughtstealing
     })
     .then(
         function createSuccess(hstats) {

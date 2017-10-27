@@ -1,5 +1,5 @@
 const sequelize = require('../db.js');
-const pStats = require('../models/pstats.js');
+const pStats = sequelize.import('../models/pstats.js');
 
 exports.addpStats = function(req,res) {
     let stats = bundlepStats(req);
