@@ -1,5 +1,4 @@
 const sequelize = require('../db.js');
-const User = sequelize.import('../models/user.js');
 const hStats = sequelize.import('../models/hstats.js');
 
 exports.addhStats = function(req,res) {
