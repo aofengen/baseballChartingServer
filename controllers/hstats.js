@@ -2,7 +2,6 @@ const sequelize = require('../db.js');
 const hStats = sequelize.import('../models/hstats.js');
 
 exports.addhStats = function(req,res) {
-    let owner = req.user.id;
     let team = req.body.team;
     let player = req.body.player;
     let atbats = req.body.abs;
@@ -20,7 +19,6 @@ exports.addhStats = function(req,res) {
     let caughtstealing =  req.body.cs;
 
     hStats.create({
-        owner: owner,
         team: team,
         player: player,
         atbats: atbats,
