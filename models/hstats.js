@@ -8,13 +8,13 @@ module.exports = function(sequelize, DataTypes){
         triples: DataTypes.INTEGER,
         homeruns: DataTypes.INTEGER,
         strikeouts: DataTypes.INTEGER,
-        walks: DataTypes.INTEGER,
-        hitbypitches: DataTypes.INTEGER,
-        sacflies: DataTypes.INTEGER,
-        rbis: DataTypes.INTEGER,
-        runs: DataTypes.INTEGER,
-        stolenbases: DataTypes.INTEGER,
-        caughtstealing: DataTypes.INTEGER
+        // walks: DataTypes.INTEGER,
+        // hitbypitches: DataTypes.INTEGER,
+        // sacflies: DataTypes.INTEGER,
+        // rbis: DataTypes.INTEGER,
+        // runs: DataTypes.INTEGER,
+        // stolenbases: DataTypes.INTEGER,
+        // caughtstealing: DataTypes.INTEGER
 	});
 	return hStats;
 }

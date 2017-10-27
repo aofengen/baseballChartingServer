@@ -10,13 +10,13 @@ exports.addhStats = function(req,res) {
     let triples = req.body.triples;
     let homeruns = req.body.hrs;
     let strikeouts = req.body.strikeouts;
-    let walks = req.body.walks;
-    let hitbypitches = req.body.hbp;
-    let sacflies = req.body.sf;
-    let rbis = req.body.rbis;
-    let runs = req.body.runs;
-    let stolenbases = req.body.sb;
-    let caughtstealing =  req.body.cs;
+    // let walks = req.body.walks;
+    // let hitbypitches = req.body.hbp;
+    // let sacflies = req.body.sf;
+    // let rbis = req.body.rbis;
+    // let runs = req.body.runs;
+    // let stolenbases = req.body.sb;
+    // let caughtstealing =  req.body.cs;
 
     hStats.create({
         team: team,
@@ -27,13 +27,13 @@ exports.addhStats = function(req,res) {
         triples: triples,
         homeruns: homeruns,
         strikeouts: strikeouts,
-        walks: walks,
-        hitbypitches: hitbypitches,
-        sacflies: sacflies,
-        rbis: rbis,
-        runs: runs,
-        stolenbases: stolenbases,
-        caughtstealing: caughtstealing
+        // walks: walks,
+        // hitbypitches: hitbypitches,
+        // sacflies: sacflies,
+        // rbis: rbis,
+        // runs: runs,
+        // stolenbases: stolenbases,
+        // caughtstealing: caughtstealing
     })
     .then(
         function createSuccess(stats) {
@@ -77,23 +77,23 @@ exports.deletehStats = function(req,res) {
 
 //exports.updatehStats = function(req,res) {}
 
-function bundlehStats(req) {
-    let statsBundle = {
-        team: req.body.team,
-        player: req.body.player,
-        atbats: req.body.abs,
-        singles: req.body.singles,
-        doubles: req.body.doubles,
-        triples: req.body.triples,
-        homeruns: req.body.hrs,
-        strikeouts: req.body.strikeouts,
-        walks: req.body.walks,
-        hitbypitches: req.body.hbp,
-        sacflies: req.body.sf,
-        rbis: req.body.rbis,
-        runs: req.body.runs,
-        stolenbases: req.body.sb,
-        caughtstealing: req.body.cs
-    }
-    return statsBundle;
-}
+// function bundlehStats(req) {
+//     let statsBundle = {
+//         team: req.body.team,
+//         player: req.body.player,
+//         atbats: req.body.abs,
+//         singles: req.body.singles,
+//         doubles: req.body.doubles,
+//         triples: req.body.triples,
+//         homeruns: req.body.hrs,
+//         strikeouts: req.body.strikeouts,
+//         walks: req.body.walks,
+//         hitbypitches: req.body.hbp,
+//         sacflies: req.body.sf,
+//         rbis: req.body.rbis,
+//         runs: req.body.runs,
+//         stolenbases: req.body.sb,
+//         caughtstealing: req.body.cs
+//     }
+//     return statsBundle;
+// }
