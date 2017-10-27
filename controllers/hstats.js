@@ -1,7 +1,9 @@
 const sequelize = require('../db.js');
-const hStats = require('../models/hstats.js');
+const User = sequelize.import('../models/user.js');
+const hStat = require('../models/hstats.js');
 
 exports.addhStats = function(req,res) {
+    let owner = req.user.id;
     let team = req.body.team;
     let player = req.body.player;
     let atbats = req.body.abs;
@@ -18,7 +20,8 @@ exports.addhStats = function(req,res) {
     // let stolenbases = req.body.sb;
     // let caughtstealing =  req.body.cs;
 
-    hStats.create({
+    hStat.create({
+        owner: owner,
         team: team,
         player: player,
         atbats: atbats,
@@ -36,9 +39,9 @@ exports.addhStats = function(req,res) {
         // caughtstealing: caughtstealing
     })
     .then(
-        function createSuccess(stats) {
+        function createSuccess(hstats) {
             res.json({
-                hstats: stats
+                hstats: hstats
             });
         },
         function createError(err) {
@@ -50,7 +53,7 @@ exports.addhStats = function(req,res) {
 exports.gethStats = function(req,res) {
     let player = req.body.player;
 
-    hStats.findAll({where: {player: player}})
+    hStat.findAll({where: {player: player}})
     .then(
         function findAllSuccess(data) {
             res.json(data);
@@ -64,7 +67,7 @@ exports.gethStats = function(req,res) {
 exports.deletehStats = function(req,res) {
     let player = req.body.player;
     
-    hStats.destroy({where: {player: player}})
+    hStat.destroy({where: {player: player}})
     .then(
         function deleteSuccess(data) {
             res.json(data);

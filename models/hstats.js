@@ -1,5 +1,6 @@
 module.exports = function(sequelize, DataTypes){
-	let hStats = sequelize.define('hstats', {
+	let hStats = sequelize.define('hstat', {
+        owner: DataTypes.INTEGER,
 		team: DataTypes.STRING,
         player: DataTypes.STRING,
         atbats: DataTypes.INTEGER,

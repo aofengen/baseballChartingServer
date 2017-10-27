@@ -21,6 +21,6 @@ let User = sequelize.import('./models/user.js');
 let Team = sequelize.import('./models/team.js');
 let Player = sequelize.import('./models/player.js');
 let Position = sequelize.import('./models/position.js');
-let hStats = sequelize.import('./models/hstats.js');
+let hStat = sequelize.import('./models/hstats.js');
 let pStats = sequelize.import('./models/pstats.js');
 module.exports = sequelize;
