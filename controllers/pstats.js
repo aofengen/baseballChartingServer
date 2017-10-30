@@ -2,9 +2,41 @@ const sequelize = require('../db.js');
 const pStats = sequelize.import('../models/pstats.js');
 
 exports.addpStats = function(req,res) {
-    let stats = bundlepStats(req);
+    let team = req.body.team;
+    let player = req.body.player;
+    let IP = req.body.ip;
+    let wins = req.body.wins;
+    let losses = req.body.losses;
+    let saves = req.body.saves;
+    let earnedrunsallowed = req.body.er;
+    let runsallowed = req.body.r;
+    let strikeouts = req.body.strikeouts;
+    let walksallowed = req.body.walksallowed;
+    let hits = req.body.hits;
+    let wildpitches = req.body.wp;
+    let pickoffs = req.body.po;
+    let stolenbases = req.body.sb;
+    let caughtstealing = req.body.cs;
+    let homerunsallowed = req.body.hr;
 
-    pStats.create(stats)
+    pStats.create({
+		team: team,
+        player: player,
+        IP: IP,
+        wins: wins,
+        losses: losses,
+        saves: saves,
+        earnedrunsallowed: earnedrunsallowed,
+        runsallowed: runsallowed,
+        strikeouts: strikeouts,
+        walksallowed: walksallowed,
+        hits: hits,
+        wildpitches: wildpitches,
+        pickoffs: pickoffs,
+        stolenbases: stolenbases,
+        caughtstealing: caughtstealing,
+        homerunsallowed: homerunsallowed
+    })
     .then(
         function createSuccess(hstats) {
             res.json({
@@ -47,41 +79,3 @@ exports.deletepStats = function(req,res) {
 
 //exports.updatepStats = function(req,res) {}
 
-function bundlepStats(req) {
-    let team = req.body.team;
-    let player = req.body.player;
-    let IP = req.body.ip;
-    let wins = req.body.wins;
-    let losses = req.body.losses;
-    let saves = req.body.saves;
-    let earnedrunsallowed = req.body.er;
-    let runsallowed = req.body.r;
-    let strikeouts = req.body.strikeouts;
-    let walksallowed = req.body.walksallowed;
-    let hits = req.body.hits;
-    let wildpitches = req.body.wp;
-    let pickoffs = req.body.po;
-    let stolenbases = req.body.sb;
-    let caughtstealing = req.body.cs;
-    let homerunsallowed = req.body.hr;
-
-    let statsBundle = {
-		team: team,
-        player: player,
-        IP: IP,
-        wins: wins,
-        losses: losses,
-        saves: saves,
-        earnedrunsallowed: earnedrunsallowed,
-        runsallowed: runsallowed,
-        strikeouts: strikeouts,
-        walksallowed: walksallowed,
-        hits: hits,
-        wildpitches: wildpitches,
-        pickoffs: pickoffs,
-        stolenbases: stolenbases,
-        caughtstealing: caughtstealing,
-        homerunsallowed: homerunsallowed
-    }
-    return statsBundle;
-}
