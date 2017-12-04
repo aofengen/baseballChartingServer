@@ -12,11 +12,11 @@ const Position = sequelize.import(__dirname + '\/models\/position.js');
 const hStats = sequelize.import(__dirname + '\/models\/hstats.js');
 const pStats = sequelize.import(__dirname + '\/models\/pstats.js');
 
-Team.sync({force: true});
-Player.sync({force: true});
-hStats.sync({force: true});
-pStats.sync({force: true});
-//sequelize.sync();
+// Team.sync({force: true});
+// Player.sync({force: true});
+// hStats.sync({force: true});
+// pStats.sync({force: true});
+sequelize.sync();
 // app.use(cors());
 app.use(bodyParser.json());
 app.use(require('./middleware/headers'));
