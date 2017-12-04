@@ -48,9 +48,8 @@ exports.addhStats = function(req,res) {
 }
 
 exports.gethStats = function(req,res) {
-    let player = req.body.player;
-    
-    hStats.findAll({where: {player: player}})
+
+    hStats.findAll()
     .then(
         function findAllSuccess(data) {
             res.json(data);
