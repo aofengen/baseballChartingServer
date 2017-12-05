@@ -15,7 +15,7 @@ const pStats = sequelize.import(__dirname + '\/models\/pstats.js');
 // Team.sync({force: true});
 // Player.sync({force: true});
 // hStats.sync({force: true});
-pStats.sync({force: true});
+// pStats.sync({force: true});
 sequelize.sync();
 // app.use(cors());
 app.use(bodyParser.json());
