@@ -77,5 +77,49 @@ exports.deletepStats = function(req,res) {
     );
 }
 
-//exports.updatepStats = function(req,res) {}
+exports.updatepStats = function(req,res) {
+    let player = req.body.player;
+    let IP = req.body.ip;
+    let wins = req.body.wins;
+    let losses = req.body.losses;
+    let saves = req.body.saves;
+    let earnedrunsallowed = req.body.er;
+    let runsallowed = req.body.r;
+    let strikeouts = req.body.strikeouts;
+    let walksallowed = req.body.walksallowed;
+    let hits = req.body.hits;
+    let wildpitches = req.body.wp;
+    let pickoffs = req.body.po;
+    let stolenbases = req.body.sb;
+    let caughtstealing = req.body.cs;
+    let homerunsallowed = req.body.hr;
+
+    pStats.update({
+        IP: IP,
+        wins: wins,
+        losses: losses,
+        saves: saves,
+        earnedrunsallowed: earnedrunsallowed,
+        runsallowed: runsallowed,
+        strikeouts: strikeouts,
+        walksallowed: walksallowed,
+        hits: hits,
+        wildpitches: wildpitches,
+        pickoffs: pickoffs,
+        stolenbases: stolenbases,
+        caughtstealing: caughtstealing,
+        homerunsallowed: homerunsallowed
+    },
+    {where: {player: player}}
+    )
+    .then(
+        function updateSuccess(updatedStats) {
+            pStats.sync();
+            res.json(updatedStats);
+        },
+        function updateError(err) {
+            res.status(502, err.message)
+        }
+    )
+}
 

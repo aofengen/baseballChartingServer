@@ -114,7 +114,7 @@ exports.updatehStats = function(req,res) {
            res.json(updatedStats);
         },
         function updateError(err) {
-            res.status(502).send(err.message);
+            res.status(502, err.message);
         }
     );
 }

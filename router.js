@@ -31,5 +31,5 @@ module.exports = function(app) {
     app.delete('/api/pstats', pStats.deletepStats);
 
     app.put('/api/hstats', hStats.updatehStats);
-    // app.update('/api/pstats', hStats.updatepStats);
+    app.put('/api/pstats', hStats.updatepStats);
 }
