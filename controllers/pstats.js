@@ -52,7 +52,7 @@ exports.addpStats = function(req,res) {
 exports.getpStats = function(req,res) {
     let player = req.body.player;
 
-    pStats.findAll({where: {player: player}})
+    pStats.findAll()
     .then(
         function findAllSuccess(data) {
             res.json(data);
