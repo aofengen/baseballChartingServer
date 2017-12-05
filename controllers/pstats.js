@@ -38,7 +38,7 @@ exports.addpStats = function(req,res) {
         homerunsallowed: homerunsallowed
     })
     .then(
-        function createSuccess(hstats) {
+        function createSuccess(pstats) {
             res.json({
                 pstats: stats
             });
