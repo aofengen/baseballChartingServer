@@ -110,8 +110,7 @@ exports.updatepStats = function(req,res) {
         caughtstealing: caughtstealing,
         homerunsallowed: homerunsallowed
     },
-    {where: {player: player}}
-    )
+    {where: {player: player}})
     .then(
         function updateSuccess(updatedStats) {
             pStats.sync();
