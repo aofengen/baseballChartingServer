@@ -30,6 +30,6 @@ module.exports = function(app) {
     app.delete('/api/hstats', hStats.deletehStats);
     app.delete('/api/pstats', pStats.deletepStats);
 
-    // app.update('/api/hstats', hStats.updatehStats);
+    app.put('/api/hstats', hStats.updatehStats);
     // app.update('/api/pstats', hStats.updatepStats);
 }

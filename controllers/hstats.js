@@ -74,7 +74,50 @@ exports.deletehStats = function(req,res) {
     );
 }
 
-//exports.updatehStats = function(req,res) {}
+exports.updatehStats = function(req,res) {
+    let player = req.body.player;
+    let atbats = req.body.abs;
+    let singles = req.body.singles;
+    let doubles = req.body.doubles;
+    let triples = req.body.triples;
+    let homeruns = req.body.hrs;
+    let strikeouts = req.body.strikeouts;
+    let walks = req.body.walks;
+    let hitbypitches = req.body.hbp;
+    let sacflies = req.body.sf;
+    let rbis = req.body.rbis;
+    let runs = req.body.runs;
+    let stolenbases = req.body.sb;
+    let caughtstealing =  req.body.cs;
+
+    hStats.update(
+        {
+            atbats: atbats,
+            singles: singles,
+            doubles: doubles,
+            triples: triples,
+            homeruns: homeruns,
+            strikeouts: strikeouts,
+            walks: walks,
+            hitbypitches: hitbypitches,
+            sacflies: sacflies,
+            rbis: rbis,
+            runs: runs,
+            stolenbases: stolenbases,
+            caughtstealing: caughtstealing
+        },
+        {where: {player: player}} 
+     )
+    .then(
+        function updateSuccess(updatedStats) {
+           hStats.sync();
+           res.json(updatedStats);
+        },
+        function updateError(err) {
+            res.status(502).send(err.message);
+        }
+    );
+}
 
 // function bundlehStats(req) {
 //     let statsBundle = {
