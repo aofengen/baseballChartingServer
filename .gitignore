@@ -2,4 +2,3 @@ node_modules/
 bower_components/
 unused_files/
 .env
-test
