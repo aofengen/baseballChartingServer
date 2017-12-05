@@ -120,6 +120,6 @@ exports.updatepStats = function(req,res) {
         function updateError(err) {
             res.status(502, err.message)
         }
-    )
+    );
 }
 

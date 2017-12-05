@@ -90,24 +90,23 @@ exports.updatehStats = function(req,res) {
     let stolenbases = req.body.sb;
     let caughtstealing =  req.body.cs;
 
-    hStats.update(
-        {
-            atbats: atbats,
-            singles: singles,
-            doubles: doubles,
-            triples: triples,
-            homeruns: homeruns,
-            strikeouts: strikeouts,
-            walks: walks,
-            hitbypitches: hitbypitches,
-            sacflies: sacflies,
-            rbis: rbis,
-            runs: runs,
-            stolenbases: stolenbases,
-            caughtstealing: caughtstealing
+    hStats.update({
+        atbats: atbats,
+        singles: singles,
+        doubles: doubles,
+        triples: triples,
+        homeruns: homeruns,
+        strikeouts: strikeouts,
+        walks: walks,
+        hitbypitches: hitbypitches,
+        sacflies: sacflies,
+        rbis: rbis,
+        runs: runs,
+        stolenbases: stolenbases,
+        caughtstealing: caughtstealing
         },
         {where: {player: player}} 
-     )
+    )
     .then(
         function updateSuccess(updatedStats) {
            hStats.sync();
