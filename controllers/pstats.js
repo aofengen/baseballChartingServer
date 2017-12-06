@@ -98,7 +98,7 @@ exports.updatepStats = function(req,res) {
     let homerunsallowed = req.body.hr;
 
     pStats.update({
-        position: position
+        position: position,
         IP: IP,
         wins: wins,
         losses: losses,
