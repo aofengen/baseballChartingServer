@@ -4,6 +4,7 @@ const pStats = sequelize.import('../models/pstats.js');
 exports.addpStats = function(req,res) {
     let team = req.body.team;
     let player = req.body.player;
+    let position = req.body.position;
     let IP = req.body.ip;
     let wins = req.body.wins;
     let losses = req.body.losses;
@@ -22,6 +23,7 @@ exports.addpStats = function(req,res) {
     pStats.create({
 		team: team,
         player: player,
+        position: position,
         IP: IP,
         wins: wins,
         losses: losses,
@@ -79,6 +81,7 @@ exports.deletepStats = function(req,res) {
 
 exports.updatepStats = function(req,res) {
     let player = req.body.player;
+    let position = req.body.position;
     let IP = req.body.ip;
     let wins = req.body.wins;
     let losses = req.body.losses;
@@ -95,6 +98,7 @@ exports.updatepStats = function(req,res) {
     let homerunsallowed = req.body.hr;
 
     pStats.update({
+        position: position
         IP: IP,
         wins: wins,
         losses: losses,

@@ -2,6 +2,7 @@ module.exports = function(sequelize, DataTypes){
 	let pStats = sequelize.define('pstats', {
 		team: DataTypes.STRING,
         player: DataTypes.STRING,
+        position: DataTypes.STRING,
         IP: DataTypes.INTEGER,
         wins: DataTypes.INTEGER,
         losses: DataTypes.INTEGER,

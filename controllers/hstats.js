@@ -4,6 +4,7 @@ const hStats = sequelize.import('../models/hstats.js');
 exports.addhStats = function(req,res) {
     let team = req.body.team;
     let player = req.body.player;
+    let position = req.body.position;
     let atbats = req.body.abs;
     let singles = req.body.singles;
     let doubles = req.body.doubles;
@@ -21,6 +22,7 @@ exports.addhStats = function(req,res) {
     hStats.create({
         team: team,
         player: player,
+        position: position,
         atbats: atbats,
         singles: singles,
         doubles: doubles,
@@ -76,6 +78,7 @@ exports.deletehStats = function(req,res) {
 
 exports.updatehStats = function(req,res) {
     let player = req.body.player;
+    let position = req.body.position;
     let atbats = req.body.abs;
     let singles = req.body.singles;
     let doubles = req.body.doubles;
@@ -91,6 +94,7 @@ exports.updatehStats = function(req,res) {
     let caughtstealing =  req.body.cs;
 
     hStats.update({
+        position: position,
         atbats: atbats,
         singles: singles,
         doubles: doubles,
