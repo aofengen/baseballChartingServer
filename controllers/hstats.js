@@ -63,9 +63,10 @@ exports.gethStats = function(req,res) {
 }
 
 exports.deletehStats = function(req,res) {
+    let team = req.body.team
     let player = req.body.player;
     
-    hStats.destroy({where: {player: player}})
+    hStats.destroy({where: {team: team, player: player}})
     .then(
         function deleteSuccess(data) {
             res.json(data);
@@ -77,6 +78,7 @@ exports.deletehStats = function(req,res) {
 }
 
 exports.updatehStats = function(req,res) {
+    let team = req.body.team;
     let player = req.body.player;
     let position = req.body.position;
     let atbats = req.body.abs;
@@ -109,7 +111,7 @@ exports.updatehStats = function(req,res) {
         stolenbases: stolenbases,
         caughtstealing: caughtstealing
         },
-        {where: {player: player}} 
+        {where: {team: team, player: player}} 
     )
     .then(
         function updateSuccess(updatedStats) {

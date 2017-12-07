@@ -42,7 +42,7 @@ exports.addpStats = function(req,res) {
     .then(
         function createSuccess(pstats) {
             res.json({
-                pstats: stats
+                pstats: pstats
             });
         },
         function createError(err) {
@@ -66,9 +66,10 @@ exports.getpStats = function(req,res) {
 }
 
 exports.deletepStats = function(req,res) {
+    let team = req.body.team;
     let player = req.body.player;
     
-    pStats.destroy({where: {player: player}})
+    pStats.destroy({where: {team: team, player: player}})
     .then(
         function deleteSuccess(data) {
             res.json(data);
@@ -80,6 +81,7 @@ exports.deletepStats = function(req,res) {
 }
 
 exports.updatepStats = function(req,res) {
+    let team = req.body.team;
     let player = req.body.player;
     let position = req.body.position;
     let IP = req.body.ip;
@@ -114,7 +116,7 @@ exports.updatepStats = function(req,res) {
         caughtstealing: caughtstealing,
         homerunsallowed: homerunsallowed
     },
-    {where: {player: player}})
+    {where: {team: team, player: player}})
     .then(
         function updateSuccess(updatedStats) {
             pStats.sync();

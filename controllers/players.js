@@ -44,14 +44,15 @@ exports.getPlayers = function(req, res) {
 };
 
 exports.deletePlayer = function(req, res) {
+    let team = req.body.team;
     let player = req.body.player;
     
-    Player.destroy({where: {name: player}})
+    Player.destroy({where: {teamName: team, name: player}})
     .then(
         function deleteSuccess(data) {
             res.json(data);
         },
-        function deleteError(error) {
+        function deleteError(err) {
             res.json(500, err.message);
         }
     );
