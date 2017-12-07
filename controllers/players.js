@@ -52,7 +52,7 @@ exports.deletePlayer = function(req, res) {
         function deleteSuccess(data) {
             res.json(data);
         },
-        function deleteError(error) {
+        function deleteError(err) {
             res.json(500, err.message);
         }
     );
